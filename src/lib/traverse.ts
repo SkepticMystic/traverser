@@ -1,29 +1,41 @@
 import { MAX_ITERATIONS } from "./const/index.ts";
 
-export const traverse = (n: number, skip: number) => {
+export type TraverseInput = {
+  n: number;
+  skips: number[];
+};
+
+export const traverse = ({ n, skips }: TraverseInput) => {
   if (n < 1) {
     throw new Error("n must be a positive integer");
-  } else if (skip === 0) {
-    throw new Error("skip can't be 0");
+  } else if (skips.length === 0) {
+    throw new Error("skips can't be empty");
+  } else if (skips.every((s) => s === 0)) {
+    throw new Error("skips can't contain only 0s");
   }
 
-  let i = 0;
-  let point = 0;
+  let iter = 0,
+    skip_i = 0,
+    point = 0;
+
   const path: number[] = [];
 
-  // Continue until getting back to the start
-  while (point !== 0 || path.length === 0) {
-    if (i++ > MAX_ITERATIONS) {
+  // Continue until getting back to the start, using the same skip
+  while (point !== 0 || skip_i !== 0 || path.length === 0) {
+    if (iter++ > MAX_ITERATIONS) {
       throw new Error("Infinite loop detected");
     }
 
     path.push(point);
-    point = (point + skip) % n;
+
+    point = (point + skips[skip_i]) % n;
+    skip_i = (skip_i + 1) % skips.length;
   }
 
-  return { n, skip, path };
+  return { n, skips, path };
 };
 
 export type Traversal = ReturnType<typeof traverse>;
 
-export const name_traversal = ({ n, skip }: Traversal) => `${n}_${skip}`;
+export const name_traversal = ({ n, skips }: TraverseInput) =>
+  `${n}_${skips.join("-")}`;
