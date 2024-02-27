@@ -23,6 +23,11 @@ Deno.test("happy", async (t) => {
   await t.step(name_traversal(input), () => {
     assertEquals(traverse(input).path, [0, 2]);
   });
+
+  input = { n: 10, skips: [3, 1] };
+  await t.step(name_traversal(input), () => {
+    assertEquals(traverse(input).path, [0, 3, 4, 7, 8, 1, 2, 5, 6, 9]);
+  });
 });
 
 Deno.test("error", async (t) => {
