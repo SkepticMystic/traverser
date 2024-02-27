@@ -10,8 +10,6 @@ export const traverse = ({ n, skips }: TraverseInput) => {
     throw new Error("n must be a positive integer");
   } else if (skips.length === 0) {
     throw new Error("skips can't be empty");
-  } else if (skips.every((s) => s === 0)) {
-    throw new Error("skips can't contain only 0s");
   }
 
   let iter = 0,
@@ -38,4 +36,4 @@ export const traverse = ({ n, skips }: TraverseInput) => {
 export type Traversal = ReturnType<typeof traverse>;
 
 export const name_traversal = ({ n, skips }: TraverseInput) =>
-  `${n}_${skips.join("-")}`;
+  `${n}_${skips.map((s) => s % n).join("-")}`;

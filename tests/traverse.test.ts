@@ -38,8 +38,4 @@ Deno.test("error", async (t) => {
   await t.step("skips.length === 0", () => {
     assertThrows(() => traverse({ n: 3, skips: [] }));
   });
-
-  await t.step("skips.every(s => s === 0)", () => {
-    assertThrows(() => traverse({ n: 3, skips: [0, 0, 0] }));
-  });
 });

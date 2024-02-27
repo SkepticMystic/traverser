@@ -35,6 +35,7 @@ export const draw_graphviz = (
       const { x, y } = circular_pos(i, n);
 
       return g.node(i.toString(), {
+        penwidth: 1.5,
         shape: "circle",
         pos: `${x * radius},${y * radius}!`,
       });
