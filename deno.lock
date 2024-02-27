@@ -1,0 +1,19 @@
+{
+  "version": "3",
+  "remote": {
+    "https://deno.land/x/graphviz@v0.2.1/attribute.ts": "faf93fa35c56c19c5d987f233c017e2092f04e4723595856012a2ec238e7c97f",
+    "https://deno.land/x/graphviz@v0.2.1/mod.ts": "718a29bdb7bd85c1cdab5ea80d8149e87d4a93cb4b56af5585a755504bfda992",
+    "https://deno.land/x/graphviz@v0.2.1/model/abstract.ts": "3d05630107191cb5308353aa921b7dfce9c5f866ed8bbdce6afaac69cf544dbd",
+    "https://deno.land/x/graphviz@v0.2.1/model/attributes_base.ts": "051a1be037db3d87574a12021e1a04bd3d2ed1f6fa0d66a32cd2eed535486ac7",
+    "https://deno.land/x/graphviz@v0.2.1/model/clusters.ts": "5ada6cedc07b76ef8cd9b779cd75eb9c9a07933ebb1eb4d344a590f0667fd93b",
+    "https://deno.land/x/graphviz@v0.2.1/model/edges.ts": "5d4a06f233693007a9a511f2f7ec363535ba9d4b772000efa81305f835dcc4b9",
+    "https://deno.land/x/graphviz@v0.2.1/model/nodes.ts": "41fa84315eb00e51a0cc54a871d76a35bcbb9fca3c1637c15d153ecf9772ba5d",
+    "https://deno.land/x/graphviz@v0.2.1/model/root_clusters.ts": "286c8d4f8e546007b90d51510240314c28c1433db8d091728b8f9c7e0ff36871",
+    "https://deno.land/x/graphviz@v0.2.1/render/renderer.ts": "c530930806d6ef01be7f15d545938a7600574bddd100e72ab712c729961856d1",
+    "https://deno.land/x/graphviz@v0.2.1/render/to_dot.ts": "f67565a59758284bf4583a2d4ab5fbe874f638bd073f7adba27f022783900697",
+    "https://deno.land/x/graphviz@v0.2.1/render/utils.ts": "ff15015df774090801f02bbd716dfa3201de5fe9e8f17cdd71bbf35bf63063d5",
+    "https://deno.land/x/graphviz@v0.2.1/render_dot.ts": "64270af90b202469deeff294c50b267293739794dbfc4624fa2b09ab809b18a9",
+    "https://deno.land/x/graphviz@v0.2.1/types.ts": "bb6cd563ebd503b9cb159bf2b7a3ffb25b1d0137fc95ec4fef7b9f8ebcde2003",
+    "https://deno.land/x/graphviz@v0.2.1/usecase.ts": "54ddc12300421e4c6586aaaa5dd19517715c4539279b8ab6fec425a5aa2f340d"
+  }
+}

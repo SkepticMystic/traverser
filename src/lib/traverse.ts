@@ -25,3 +25,5 @@ export const traverse = (n: number, skip: number) => {
 };
 
 export type Traversal = ReturnType<typeof traverse>;
+
+export const name_traversal = ({ n, skip }: Traversal) => `${n}_${skip}`;
