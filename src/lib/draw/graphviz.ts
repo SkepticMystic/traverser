@@ -2,6 +2,7 @@ import { digraph, renderDot } from "https://deno.land/x/graphviz@v0.2.1/mod.ts";
 import { Traversal, name_traversal } from "../traverse.ts";
 import { range } from "../utils/array.ts";
 
+// SOURCE: https://stackoverflow.com/questions/4242949/graphviz-circular-layout-while-preserving-node-order
 /** Get the x,y coords of the ith point on a unit circle with n points */
 const circular_pos = (i: number, n: number) => {
   const angle = (i * 2 * Math.PI) / n;
@@ -23,7 +24,7 @@ export const draw_graphviz = (
   const { format, radius } = Object.assign(
     {
       format: "svg",
-      radius: n / 2,
+      radius: n / 5,
     },
     options
   );
@@ -34,6 +35,7 @@ export const draw_graphviz = (
       const { x, y } = circular_pos(i, n);
 
       return g.node(i.toString(), {
+        shape: "circle",
         pos: `${x * radius},${y * radius}!`,
       });
     });
